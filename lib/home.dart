@@ -36,7 +36,9 @@ class _CoinmatchHomePageState extends State<CoinmatchHomePage> {
       _currentTabContent = FavoritesPage();
 
     return CoinmatchPage(
-      appbar: CoinmatchAppbar(),
+      appbar: CoinmatchAppbar(
+        title: homeProvider.title,
+      ),
       bottomBar: CoinmatchBottomBar(),
       background: Pallette.background,
       child: Column(
@@ -44,7 +46,7 @@ class _CoinmatchHomePageState extends State<CoinmatchHomePage> {
           Expanded(
             child: AnimatedSwitcher(
               duration: Duration(
-                milliseconds: 400,
+                milliseconds: 300,
               ),
               child: _currentTabContent ?? Offstage(),
             ),

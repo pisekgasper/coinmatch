@@ -3,6 +3,7 @@ import 'package:swipe_cards/swipe_cards.dart';
 
 class CardProvider extends ChangeNotifier {
   List<SwipeItem> _swipeItems = [];
+  List<Content> favorites = [];
   MatchEngine _matchEngine = MatchEngine();
   List<String> _names = ["BTC", "Ethereum", "ADA", "Doge"];
   List<double> _values = [50000.99, 2576.32, 1.30, 0.51];
@@ -24,6 +25,11 @@ class CardProvider extends ChangeNotifier {
               ),
             ),
           );
+      this.favorites.add(Content(
+            name: _names[i],
+            img: _image[i],
+            value: _values[i],
+          ));
     }
     _matchEngine = MatchEngine(swipeItems: _swipeItems);
   }
@@ -31,10 +37,11 @@ class CardProvider extends ChangeNotifier {
   MatchEngine get matchEngine => _matchEngine;
   List<SwipeItem> get swipeItems => _swipeItems;
 
-  // void setTab() {
-  //   currentTab = tab;
-  //   notifyListeners();
-  // }
+  void dismiss(Content x) {
+    favorites.remove(x);
+    _swipeItems.add(SwipeItem(content: x));
+    notifyListeners();
+  }
 }
 
 class Content {

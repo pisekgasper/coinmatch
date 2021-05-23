@@ -62,7 +62,7 @@ class CoinmatchApp extends StatelessWidget {
                 letterSpacing: 0.41 * ff,
                 color: Pallette.content),
             headline2: TextStyle(
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w500,
                 fontSize: 28 * ff,
                 height: 1.214,
                 letterSpacing: 0.34 * ff,
