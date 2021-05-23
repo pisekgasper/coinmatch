@@ -6,7 +6,6 @@ import 'package:provider/provider.dart';
 class CoinmatchBottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final ThemeData theme = Theme.of(context);
     final tabProvider = context.watch<HomeProvider>();
 
     return Material(
@@ -116,30 +115,3 @@ class CoinmatchTab extends StatelessWidget {
     );
   }
 }
-
-// class CoinmatchTab extends StatefulWidget {
-//   final bool selected;
-//   final String label;
-//   final Widget icon;
-
-//   const CoinmatchTab(
-//       {Key? key,
-//       required this.selected,
-//       required this.label,
-//       required this.icon})
-//       : super(key: key);
-
-//   @override
-//   _CoinmatchTabState createState() => _CoinmatchTabState();
-// }
-
-// class _CoinmatchTabState extends State<CoinmatchTab> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       width: 100,
-//       height: 100,
-//       color: Pallette.accent,
-//     );
-//   }
-// }

@@ -25,7 +25,6 @@ class _CoinmatchHomePageState extends State<CoinmatchHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final ThemeData theme = Theme.of(context);
     final homeProvider = context.watch<HomeProvider>();
 
     if (homeProvider.currentTab == HomeTab.coinSwipe)

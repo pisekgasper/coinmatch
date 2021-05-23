@@ -2,15 +2,8 @@ import 'package:coinmatch/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:coinmatch/providers/card_provider.dart';
 import 'package:provider/provider.dart';
-import 'package:http/http.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class FavoritesPage extends StatelessWidget {
-  String urlBTC = "https://www.binance.com/en/trade/BTC_USDT?type=spot";
-  String urlETH = "https://www.binance.com/en/trade/ETH_USDT?type=spot";
-  String urlADA = "https://www.binance.com/en/trade/ADA_USDT?type=spot";
-  String urlDOGE = "https://www.binance.com/en/trade/DOGE_USDT?type=spot";
-
   @override
   Widget build(BuildContext context) {
     final favoritesProvider = context.watch<CardProvider>();
