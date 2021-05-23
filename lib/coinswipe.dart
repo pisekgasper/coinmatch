@@ -25,7 +25,7 @@ class CoinSwipePage extends StatelessWidget {
             ),
           )
         : Container(
-            alignment: Alignment.topCenter,
+            //alignment: Alignment.center,
             child: Expanded(
               child: Container(
                 height: height * 0.55,
@@ -35,11 +35,12 @@ class CoinSwipePage extends StatelessWidget {
                   itemBuilder: (BuildContext context, int index) {
                     return Container(
                       decoration: BoxDecoration(
-                        color: Pallette.primary,
+                        color: Pallette.primary.shade900,
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                       ),
                       alignment: Alignment.center,
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           CryptoLogo(
                             urlString: _swipeItems[index].content.img,
@@ -49,7 +50,27 @@ class CoinSwipePage extends StatelessWidget {
                           ),
                           CryptoValue(
                             value: _swipeItems[index].content.value,
-                          )
+                          ),
+                          if (_swipeItems[index].content.daily_trend > 0)
+                            Text(
+                              "Daily trend: GOOD",
+                              style: Theme.of(context).textTheme.bodyText1,
+                            )
+                          else
+                            Text(
+                              "Daily trend: BAD",
+                              style: Theme.of(context).textTheme.bodyText1,
+                            ),
+                          if (_swipeItems[index].content.monthly_trend > 0)
+                            Text(
+                              "Monthly trend: GOOD",
+                              style: Theme.of(context).textTheme.bodyText1,
+                            )
+                          else
+                            Text(
+                              "Monthly trend: BAD",
+                              style: Theme.of(context).textTheme.bodyText1,
+                            )
                         ],
                       ),
                     );
@@ -93,7 +114,10 @@ class CryptoTitle extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Text(titleString),
+        Text(
+          titleString,
+          style: Theme.of(context).textTheme.headline1,
+        ),
       ],
     );
   }
@@ -109,7 +133,10 @@ class CryptoValue extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Text(value.toString()),
+        Text(
+          "USD  " + value.toString(),
+          style: Theme.of(context).textTheme.bodyText1,
+        ),
       ],
     );
   }

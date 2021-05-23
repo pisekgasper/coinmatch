@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "832682608721",
+    "firebase_url": "https://coinmatch-5cb09-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "coinmatch-5cb09",
+    "storage_bucket": "coinmatch-5cb09.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:832682608721:android:60118e30c35668c2b3d070",
+        "android_client_info": {
+          "package_name": "com.sugardaddies.coinmatch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "832682608721-ul269mk1hdv3767dodk63iqfeu9bvcvt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sugardaddies.coinmatch",
+            "certificate_hash": "31a599c3db45a417390631965e311af172cf97bd"
+          }
+        },
+        {
+          "client_id": "832682608721-8jmmqk9rscngo9sacnfkhgk9ev0lprru.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmpmWSBOSUCSVvGK88NEdmPy_ZrVU6pZw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "832682608721-8jmmqk9rscngo9sacnfkhgk9ev0lprru.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
