@@ -1,7 +1,7 @@
 name: coinmatch
 description: A new Flutter project.
 
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
 
@@ -11,6 +11,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
+  firebase_core:
+
+  # Database
+  cloud_firestore:
+
+  # Auth
+  firebase_auth: ^1.2.0
 
   provider: ^5.0.0
   flutter_svg: ^0.22.0
