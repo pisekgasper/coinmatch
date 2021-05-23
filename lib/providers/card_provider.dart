@@ -10,7 +10,7 @@ class CardProvider extends ChangeNotifier {
   List<SwipeItem> _swipeItems = [];
   List<Content> favorites = [];
   MatchEngine _matchEngine = MatchEngine();
-  List<String> _names = ["BTC", "Ethereum", "ADA", "Doge"];
+  List<String> _names = ["BTC", "ETH", "ADA", "DOGE"];
   List<double> _values = [37476.83, 2297.19, 1.47, 0.342014];
   List<String> _image = [
     'https://localbitcoinnow.com/wp-content/uploads/2019/12/The-bit-logo-e1575819611411.png',
@@ -42,24 +42,36 @@ class CardProvider extends ChangeNotifier {
     for (int i = 0; i < _names.length; i++) {
       this._swipeItems.add(
             SwipeItem(
-              content: Content(
-                name: _names[i],
-                img: _image[i],
-                value: _values[i],
-                volume: _volume[i],
-                daily_trend: _coefDay[i],
-                monthly_trend: _coefMonth[i],
-              ),
-            ),
+                content: Content(
+                  name: _names[i],
+                  img: _image[i],
+                  value: _values[i],
+                  volume: _volume[i],
+                  daily_trend: _coefDay[i],
+                  monthly_trend: _coefMonth[i],
+                ),
+                likeAction: () {
+                  favorites.add(Content(
+                    name: _names[i],
+                    img: _image[i],
+                    value: _values[i],
+                    volume: _volume[i],
+                    daily_trend: _coefDay[i],
+                    monthly_trend: _coefMonth[i],
+                  ));
+                },
+                nopeAction: () {
+                  _swipeItems.add(SwipeItem(
+                      content: Content(
+                    name: _names[i],
+                    img: _image[i],
+                    value: _values[i],
+                    volume: _volume[i],
+                    daily_trend: _coefDay[i],
+                    monthly_trend: _coefMonth[i],
+                  )));
+                }),
           );
-      this.favorites.add(Content(
-            name: _names[i],
-            img: _image[i],
-            value: _values[i],
-            volume: _volume[i],
-            daily_trend: _coefDay[i],
-            monthly_trend: _coefMonth[i],
-          ));
     }
     _matchEngine = MatchEngine(swipeItems: _swipeItems);
   }
